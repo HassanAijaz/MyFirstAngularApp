@@ -19,7 +19,7 @@
       aria-describedby="helpId"
       placeholder="Server name " 
       [(ngModel)]="serverName">
-    <small id="helpId" class="form-text text-muted">Enter the server name</small>
+    <small id="helpId" class ="form-text text-muted">Enter the server name</small>
   </div>
 <button 
 class="btn btn-primary" 
@@ -27,7 +27,7 @@ class="btn btn-primary"
 (click)="createServer()"
 >Add new server</button>
 
-<p [innerText]="serverCreationStatus"></p>
+<p [innerText]="serverCreationStatus" *ngIf="isServerCreated"></p>
 <br>
 <app-server></app-server>
 <app-server></app-server>

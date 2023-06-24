@@ -11,6 +11,7 @@ import { takeUntil } from 'rxjs';
 export class ServersComponent {
   allowNewServer = false
   serverCreationStatus = "The server was not created."
+  isServerCreated = false
   serverName = "Initial server."
   constructor() {
   setTimeout(() => {
@@ -19,6 +20,7 @@ export class ServersComponent {
   }
 
   createServer(){
+    this.isServerCreated = true
     this.serverCreationStatus = "The server created succssfully. Name of server is " + this.serverName
   }
  
