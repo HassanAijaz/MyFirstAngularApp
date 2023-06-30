@@ -11,24 +11,13 @@
 <p>{{serverName}}</p>
 </div> -->
 <div class="mb-3">
-    <label for="" class="form-label">Server name</label>
-    <input 
-      type="text"
-      class="form-control"
-      name="" id=""
-      aria-describedby="helpId"
-      placeholder="Server name " 
-      [(ngModel)]="serverName">
-    <small id="helpId" class ="form-text text-muted">Enter the server name</small>
-  </div>
-<button 
-class="btn btn-primary" 
-[disabled]="!allowNewServer"
-(click)="createServer()"
->Add new server</button>
+  <label for="" class="form-label">Server name</label>
+  <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="Server name "
+    [(ngModel)]="serverName">
+  <small id="helpId" class="form-text text-muted">Enter the server name</small>
+</div>
+<button class="btn btn-primary" [disabled]="!allowNewServer" (click)="createServer()">Add new server</button>
 
 <p [innerText]="serverCreationStatus" *ngIf="isServerCreated"></p>
 <br>
-<app-server></app-server>
-<app-server></app-server>
-<app-server></app-server>
+<app-server *ngFor="let server of servers"> </app-server>
